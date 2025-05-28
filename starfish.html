@@ -1,0 +1,1118 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Regolamento Casa Vacanze STARFISH</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 20px;
+        }
+        
+        .page {
+            max-width: 210mm;
+            min-height: 297mm;
+            background: white;
+            margin: 0 auto 30px;
+            padding: 20mm;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            page-break-after: always;
+            break-inside: avoid;
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding: 20px;
+            background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 100%);
+            border-radius: 15px;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+            pointer-events: none;
+        }
+        
+        .logo {
+            font-size: 36px;
+            font-weight: 700;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .starfish-emoji {
+            font-size: 42px;
+            margin-right: 15px;
+            animation: rotate 4s linear infinite;
+        }
+        
+        @keyframes rotate {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        .subtitle {
+            font-size: 20px;
+            margin-bottom: 10px;
+            font-weight: 400;
+        }
+        
+        .location {
+            font-size: 16px;
+            opacity: 0.9;
+        }
+        
+        .section {
+            margin-bottom: 25px;
+            break-inside: avoid;
+            page-break-inside: avoid;
+        }
+        
+        .section-title {
+            font-size: 24px;
+            font-weight: 700;
+            color: #2c5aa0;
+            margin-bottom: 20px;
+            padding: 15px 20px;
+            background: linear-gradient(135deg, #ff9a9e 0%, #fad0c4 100%);
+            color: white;
+            border-radius: 12px;
+            text-align: center;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .section-title::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            animation: shine 3s infinite;
+        }
+        
+        @keyframes shine {
+            0% { left: -100%; }
+            100% { left: 100%; }
+        }
+        
+        .article {
+            margin-bottom: 20px;
+            padding: 15px;
+            background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+            border-radius: 12px;
+            border-left: 5px solid #ff9a9e;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            position: relative;
+            break-inside: avoid;
+            page-break-inside: avoid;
+        }
+        
+        .article-title {
+            font-size: 18px;
+            font-weight: 600;
+            color: #2c5aa0;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .article-icon {
+            font-size: 24px;
+            margin-right: 12px;
+            background: rgba(255,255,255,0.3);
+            padding: 8px;
+            border-radius: 50%;
+            backdrop-filter: blur(10px);
+        }
+        
+        .rule-list {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .rule-item {
+            margin-bottom: 12px;
+            padding: 12px 15px;
+            background: rgba(255,255,255,0.4);
+            border-radius: 8px;
+            display: flex;
+            align-items: flex-start;
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(255,255,255,0.3);
+        }
+        
+        .rule-icon {
+            font-size: 18px;
+            margin-right: 12px;
+            min-width: 25px;
+            background: rgba(255,255,255,0.6);
+            padding: 6px;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 1;
+        }
+        
+        .rule-text {
+            flex: 1;
+            font-size: 14px;
+        }
+        
+        .highlight-box {
+            background: linear-gradient(135deg, #ff6b6b 0%, #ee5a24 100%);
+            color: white;
+            padding: 20px;
+            border-radius: 12px;
+            margin: 20px 0;
+            text-align: center;
+            font-weight: 600;
+            box-shadow: 0 8px 20px rgba(255,107,107,0.3);
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.02); }
+            100% { transform: scale(1); }
+        }
+        
+        .warning-box {
+            background: linear-gradient(135deg, #ffa726 0%, #ff7043 100%);
+            color: white;
+            padding: 15px;
+            border-radius: 10px;
+            margin: 15px 0;
+            border-left: 5px solid #ff5722;
+            font-weight: 500;
+        }
+        
+        .info-box {
+            background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 100%);
+            color: white;
+            padding: 15px;
+            border-radius: 10px;
+            margin: 15px 0;
+            border-left: 5px solid #ff6b9d;
+        }
+        
+        .contact-box {
+            background: linear-gradient(135deg, #4ecdc4 0%, #44a08d 100%);
+            color: white;
+            padding: 20px;
+            border-radius: 12px;
+            text-align: center;
+            margin: 20px 0;
+            box-shadow: 0 8px 20px rgba(78,205,196,0.3);
+        }
+        
+        .phone-number {
+            font-size: 28px;
+            font-weight: 700;
+            margin: 10px 0;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .wifi-box {
+            background: linear-gradient(135deg, #ff9a9e 0%, #fad0c4 100%);
+            color: white;
+            padding: 20px;
+            border-radius: 12px;
+            text-align: center;
+            margin: 20px 0;
+        }
+        
+        .wifi-credentials {
+            font-size: 18px;
+            font-weight: 600;
+            margin: 10px 0;
+            padding: 10px;
+            background: rgba(255,255,255,0.2);
+            border-radius: 8px;
+            backdrop-filter: blur(10px);
+        }
+        
+        .appliance-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+            margin: 20px 0;
+        }
+        
+        .appliance-item {
+            background: rgba(255,255,255,0.6);
+            padding: 15px;
+            border-radius: 10px;
+            text-align: center;
+            border: 2px solid rgba(255,255,255,0.8);
+            backdrop-filter: blur(5px);
+        }
+        
+        .appliance-icon {
+            font-size: 32px;
+            display: block;
+            margin-bottom: 8px;
+        }
+        
+        .appliance-name {
+            font-weight: 600;
+            font-size: 14px;
+            color: #2c5aa0;
+        }
+        
+        .waste-schedule {
+            background: rgba(255,255,255,0.6);
+            padding: 20px;
+            border-radius: 12px;
+            margin: 20px 0;
+            backdrop-filter: blur(5px);
+        }
+        
+        .waste-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 12px;
+            margin-bottom: 8px;
+            background: rgba(255,255,255,0.5);
+            border-radius: 8px;
+            border-left: 4px solid #4caf50;
+        }
+        
+        .waste-type {
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+        }
+        
+        .waste-days {
+            font-weight: 500;
+            color: #666;
+        }
+        
+        .price-table {
+            background: rgba(255,255,255,0.8);
+            border-radius: 12px;
+            overflow: hidden;
+            margin: 20px 0;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .price-header {
+            background: linear-gradient(135deg, #ff6b6b 0%, #ee5a24 100%);
+            color: white;
+            padding: 15px;
+            text-align: center;
+            font-weight: 600;
+            font-size: 18px;
+        }
+        
+        .price-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 12px 20px;
+            border-bottom: 1px solid rgba(0,0,0,0.1);
+        }
+        
+        .price-row:last-child {
+            border-bottom: none;
+        }
+        
+        .price-description {
+            flex: 1;
+        }
+        
+        .price-amount {
+            font-weight: 600;
+            color: #ff6b6b;
+        }
+        
+        .qr-section {
+            text-align: center;
+            padding: 30px;
+            background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+            border-radius: 15px;
+            margin: 25px 0;
+        }
+        
+        .qr-code {
+            width: 120px;
+            height: 120px;
+            background: white;
+            border-radius: 15px;
+            display: inline-block;
+            padding: 10px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+            margin: 15px 0;
+        }
+        
+        .strong {
+            font-weight: 600;
+            color: #2c5aa0;
+        }
+        
+        @media print {
+            body {
+                background: white;
+                padding: 0;
+                margin: 0;
+            }
+            
+            .page {
+                box-shadow: none;
+                margin: 0;
+                padding: 15mm;
+                page-break-after: always;
+                break-inside: avoid;
+                width: 210mm;
+                min-height: 297mm;
+                max-height: 297mm;
+                overflow: hidden;
+                display: block;
+            }
+            
+            .section {
+                break-inside: avoid;
+                page-break-inside: avoid;
+                margin-bottom: 20px;
+            }
+            
+            .article {
+                break-inside: avoid;
+                page-break-inside: avoid;
+                margin-bottom: 15px;
+            }
+            
+            .rule-list {
+                break-inside: avoid;
+                page-break-inside: avoid;
+            }
+            
+            .appliance-grid {
+                break-inside: avoid;
+                page-break-inside: avoid;
+            }
+            
+            .waste-schedule {
+                break-inside: avoid;
+                page-break-inside: avoid;
+            }
+            
+            .price-table {
+                break-inside: avoid;
+                page-break-inside: avoid;
+            }
+            
+            @page {
+                size: A4;
+                margin: 15mm;
+            }
+            
+            .highlight-box, .contact-box, .wifi-box {
+                -webkit-print-color-adjust: exact;
+                color-adjust: exact;
+                print-color-adjust: exact;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Pagina 1 -->
+    <div class="page">
+        <div class="header">
+            <div class="logo">
+                <span class="starfish-emoji">🌟</span>CASA VACANZE STARFISH
+            </div>
+            <div class="subtitle">Regolamento Interno</div>
+            <div class="location">📍 Pizzo, Calabria - Sant'Agostino</div>
+        </div>
+
+        <div style="text-align: center; margin-bottom: 30px; font-size: 16px; color: #666;">
+            <strong>Gentili Ospiti,</strong><br>
+            Vi diamo il benvenuto alla "Casa Vacanze STARFISH". Abbiamo curato ogni dettaglio affinché vi possiate sentire come a casa vostra durante il vostro soggiorno. Per garantire una convivenza armoniosa, vi chiediamo gentilmente di prendere visione e rispettare le seguenti norme.
+        </div>
+
+        <div class="section">
+            <div class="section-title">
+                🏠 ART. 1 - ACCETTAZIONE DEL REGOLAMENTO
+            </div>
+            <div class="article">
+                <div class="article-title">
+                    <span class="article-icon">📋</span>
+                    Accettazione Implicita
+                </div>
+                <p>Soggiornando presso la "Casa Vacanze STARFISH", si accetta implicitamente il presente regolamento. Tutti gli ospiti sono tenuti a rispettare le norme qui contenute per garantire un soggiorno piacevole e sicuro per tutti.</p>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-title">
+                🔑 ART. 2 - CHECK-IN E ACCESSO ALL'APPARTAMENTO
+            </div>
+            <div class="article">
+                <div class="article-title">
+                    <span class="article-icon">🏠</span>
+                    Identificazione Appartamento
+                </div>
+                <div class="info-box">
+                    <strong>🌟 APPARTAMENTO STELLA MARINA (STARFISH)</strong><br>
+                    Per individuare l'appartamento che vi accoglierà durante il soggiorno, sarà sufficiente osservare gli animali raffigurati ai lati di ogni porta. Il vostro è l'appartamento <strong>STELLA MARINA</strong> situato al <strong>piano terra</strong>.
+                </div>
+                
+                <ul class="rule-list">
+                    <li class="rule-item">
+                        <span class="rule-icon">🕐</span>
+                        <div class="rule-text">
+                            <strong>Segnalazione Danni:</strong> Eventuali danni e/o deterioramenti alla struttura, attrezzature ed alla vegetazione devono essere segnalati al locatore con tempestività entro e non oltre le 2 ore successive al check-in. Passato tale termine, gli stessi potranno essere addebitati al conduttore.
+                        </div>
+                    </li>
+                    <li class="rule-item">
+                        <span class="rule-icon">🔄</span>
+                        <div class="rule-text">
+                            <strong>Smarrimento Chiavi:</strong> In caso di smarrimento o deterioramento delle chiavi, comunicare tempestivamente al proprietario. Eventuali costi saranno addebitati al conduttore.
+                        </div>
+                    </li>
+                </ul>
+
+                <div class="warning-box">
+                    <strong>🚫 DIVIETO ASSOLUTO:</strong> È severamente vietato spostare mobili, accessori, posate e qualsiasi oggetto da un appartamento all'altro della struttura.
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-title">
+                🚪 ART. 3 - CHECK-OUT E PROCEDURE DI USCITA
+            </div>
+            <div class="article">
+                <div class="article-title">
+                    <span class="article-icon">🏃</span>
+                    Modalità di Check-out
+                </div>
+                <ul class="rule-list">
+                    <li class="rule-item">
+                        <span class="rule-icon">🔑</span>
+                        <div class="rule-text">
+                            <strong>Restituzione Chiavi:</strong> È obbligatorio restituire le chiavi al momento della partenza. Sarà sufficiente lasciare le chiavi nel centrotavola in cucina e chiudere la porta semplicemente accompagnandola dall'esterno, verificando la corretta chiusura. Non sarà necessario effettuare mandate o inserire codici.
+                        </div>
+                    </li>
+                    <li class="rule-item">
+                        <span class="rule-icon">🧹</span>
+                        <div class="rule-text">
+                            <strong>Condizioni Abitazione:</strong> Al check-out, l'abitazione deve essere lasciata in condizioni ordinate e pulite.
+                        </div>
+                    </li>
+                    <li class="rule-item">
+                        <span class="rule-icon">🛏️</span>
+                        <div class="rule-text">
+                            <strong>Biancheria e Asciugamani:</strong> Lasciare gli asciugamani usati in bagno, appesi o ripiegati (mai a terra), e le lenzuola sui letti (non è necessario rifarli, mai a terra).
+                        </div>
+                    </li>
+                    <li class="rule-item">
+                        <span class="rule-icon">🗑️</span>
+                        <div class="rule-text">
+                            <strong>Importante:</strong> Non gettare mai la biancheria sporca nel cestino dei rifiuti.
+                        </div>
+                    </li>
+                    <li class="rule-item">
+                        <span class="rule-icon">⚡</span>
+                        <div class="rule-text">
+                            <strong>Spegnimento:</strong> Spegnere tutte le luci e gli apparecchi elettrici, compresi i condizionatori.
+                        </div>
+                    </li>
+                    <li class="rule-item">
+                        <span class="rule-icon">🪟</span>
+                        <div class="rule-text">
+                            <strong>Finestre:</strong> Chiudere tutte le finestre prima della partenza.
+                        </div>
+                    </li>
+                    <li class="rule-item">
+                        <span class="rule-icon">♻️</span>
+                        <div class="rule-text">
+                            <strong>Rifiuti:</strong> I sacchetti dei rifiuti vanno lasciati fuori secondo il calendario della raccolta differenziata.
+                        </div>
+                    </li>
+                </ul>
+
+                <div class="info-box">
+                    <strong>🔍 Verifica Finale:</strong> Il locatore e/o preposto al momento del check-out ha la facoltà di visionare e segnalare eventuali danni e/o deterioramenti provocati dal conduttore e dagli ospiti alla struttura, alle attrezzature ed alla vegetazione.
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Pagina 2 -->
+    <div class="page">
+        <div class="section">
+            <div class="section-title">
+                👥 ART. 4 - NORME DI COMPORTAMENTO
+            </div>
+            <div class="article">
+                <div class="article-title">
+                    <span class="article-icon">🤫</span>
+                    Regole per una Convivenza Armoniosa
+                </div>
+                <p style="margin-bottom: 20px;">Per garantire un soggiorno piacevole per tutti gli ospiti, vi chiediamo gentilmente di rispettare queste semplici regole:</p>
+                
+                <ul class="rule-list">
+                    <li class="rule-item">
+                        <span class="rule-icon">🔔</span>
+                        <div class="rule-text">
+                            <strong>Silenzio:</strong> A qualunque ora, all'interno della struttura, devono essere evitati comportamenti, attività, giochi e uso di apparecchiature che provochino disturbo agli altri ospiti. Deve essere sempre mantenuto un comportamento rispettoso.
+                        </div>
+                    </li>
+                    <li class="rule-item">
+                        <span class="rule-icon">🚪</span>
+                        <div class="rule-text">
+                            <strong>Porte:</strong> Non sbattere le porte ma accompagnarle delicatamente. Se tornate a casa tardi, chiudete la porta del vostro appartamento con delicatezza per non disturbare chi già dorme.
+                        </div>
+                    </li>
+                    <li class="rule-item">
+                        <span class="rule-icon">👶</span>
+                        <div class="rule-text">
+                            <strong>Responsabilità Minori:</strong> Gli adulti sono responsabili del comportamento dei minori a loro affidati.
+                        </div>
+                    </li>
+                    <li class="rule-item">
+                        <span class="rule-icon">👥</span>
+                        <div class="rule-text">
+                            <strong>Solo Ospiti Registrati:</strong> Il pernottamento negli alloggi è consentito al solo numero di persone indicate al momento della prenotazione. Solo le persone registrate possono soggiornare nell'appartamento.
+                        </div>
+                    </li>
+                    <li class="rule-item">
+                        <span class="rule-icon">💼</span>
+                        <div class="rule-text">
+                            <strong>Effetti Personali:</strong> Il conduttore e ciascun ospite è tenuto alla custodia dei propri effetti personali e dei preziosi lasciati nell'appartamento. Il proprietario non risponde della loro malaugurata sottrazione.
+                        </div>
+                    </li>
+                    <li class="rule-item">
+                        <span class="rule-icon">⚖️</span>
+                        <div class="rule-text">
+                            <strong>Responsabilità Civile:</strong> Il conduttore e ciascun ospite è responsabile del proprio comportamento nella casa e nell'area circostante. In caso d'incidenti a lui imputabili, sarà chiamato a risarcire i danni.
+                        </div>
+                    </li>
+                    <li class="rule-item">
+                        <span class="rule-icon">⚡</span>
+                        <div class="rule-text">
+                            <strong>Prima di Uscire:</strong> Il conduttore e/o gli ospiti sono tenuti, prima di uscire dall'unità abitativa, a chiudere la porta di ingresso e le finestre, spegnere le luci e tutti gli apparecchi elettrici (TV, piano cottura...) e chiudere i rubinetti dell'acqua.
+                        </div>
+                    </li>
+                    <li class="rule-item">
+                        <span class="rule-icon">🔥</span>
+                        <div class="rule-text">
+                            <strong>Sicurezza Cucina:</strong> Nelle camere da letto è assolutamente vietato usare fornelli o simili per la preparazione dei cibi.
+                        </div>
+                    </li>
+                    <li class="rule-item">
+                        <span class="rule-icon">🪑</span>
+                        <div class="rule-text">
+                            <strong>Cura degli Arredi:</strong> Vi preghiamo di trattare con cura tutti gli arredi e segnalare tempestivamente eventuali danni.
+                        </div>
+                    </li>
+                    <li class="rule-item">
+                        <span class="rule-icon">👔</span>
+                        <div class="rule-text">
+                            <strong>Biancheria:</strong> Non utilizzare asciugamani per trucco, scarpe o pulizie che possano macchiare. Non macchiare la biancheria bianca.
+                        </div>
+                    </li>
+                    <li class="rule-item">
+                        <span class="rule-icon">🚭</span>
+                        <div class="rule-text">
+                            <strong>DIVIETO DI FUMO:</strong> È severamente vietato fumare all'interno dell'appartamento. È consentito fumare esclusivamente all'aperto.
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-title">
+                🧽 ART. 5 - CURA DEGLI ELETTRODOMESTICI E DELLA BIANCHERIA
+            </div>
+            <div class="article">
+                <div class="article-title">
+                    <span class="article-icon">🏠</span>
+                    Manutenzione e Pulizia
+                </div>
+                <div class="info-box">
+                    <strong>🏠 Nell'appartamento troverete tutto ciò di cui avete bisogno:</strong> coperte, cuscini, asciugamani, stoviglie per la cucina e utensili domestici. La biancheria (che trovate pulita all'inizio del soggiorno) non verrà cambiata durante il soggiorno.
+                </div>
+                
+                <ul class="rule-list">
+                    <li class="rule-item">
+                        <span class="rule-icon">🍞</span>
+                        <div class="rule-text">
+                            <strong>Forno e Piano Cottura:</strong> Se utilizzati, devono essere puliti da eventuali residui di grasso o cibo. La pulizia deve essere effettuata dopo ogni utilizzo.
+                        </div>
+                    </li>
+                    <li class="rule-item">
+                        <span class="rule-icon">🍽️</span>
+                        <div class="rule-text">
+                            <strong>Lavastoviglie:</strong> Non introdurre stoviglie con grossi residui di cibo. Sciacquare sempre i piatti prima di inserirli nell'elettrodomestico.
+                        </div>
+                    </li>
+                    <li class="rule-item">
+                        <span class="rule-icon">🛏️</span>
+                        <div class="rule-text">
+                            <strong>Biancheria Bianca:</strong> Essendo bianca, si prega di non utilizzare asciugamani per pulire scarpe, trucco o altre sostanze che possono macchiare permanentemente.
+                        </div>
+                    </li>
+                    <li class="rule-item">
+                        <span class="rule-icon">🛌</span>
+                        <div class="rule-text">
+                            <strong>Letti:</strong> Non coricarsi con i piedi sporchi o con le scarpe/ciabatte. Rispettare la biancheria fornita.
+                        </div>
+                    </li>
+                    <li class="rule-item">
+                        <span class="rule-icon">🚿</span>
+                        <div class="rule-text">
+                            <strong>Bagno:</strong> Non intasare il WC con pannolini, carta o altro materiale ingombrante. Utilizzare solo carta igienica.
+                        </div>
+                    </li>
+                    <li class="rule-item">
+                        <span class="rule-icon">🗑️</span>
+                        <div class="rule-text">
+                            <strong>Rifiuti:</strong> Non gettare mai la biancheria sporca nel cestino dei rifiuti. Utilizzare gli appositi cestini per la raccolta differenziata.
+                        </div>
+                    </li>
+                </ul>
+
+                <div class="warning-box">
+                    <strong>⚠️ ATTENZIONE:</strong> In caso di grave danneggiamento o macchie permanenti dovute a incuranza delle regole, verranno applicate sanzioni da €20 fino a €300, in base all'entità del danno.
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-title">
+                ♻️ ART. 6 - RACCOLTA DIFFERENZIATA
+            </div>
+            <div class="article">
+                <div class="article-title">
+                    <span class="article-icon">🗓️</span>
+                    Calendario 2025 - Comune di Pizzo
+                </div>
+                
+                <div class="highlight-box">
+                    🚨 IMPORTANTE: La spazzatura deve essere messa fuori porta la MATTINA PRESTO, NON la sera, per evitare che gli animali possano fare danni. Anche alla fine del soggiorno, la spazzatura va portata fuori seguendo il calendario.
+                </div>
+
+                <div class="waste-schedule">
+                    <h4 style="text-align: center; margin-bottom: 15px; color: #2c5aa0;">📅 Calendario Settimanale</h4>
+                    
+                    <div class="waste-item">
+                        <div class="waste-type">🟢 FRAZIONE ORGANICA</div>
+                        <div class="waste-days">Lunedì, Mercoledì, Venerdì</div>
+                    </div>
+                    <div class="waste-item">
+                        <div class="waste-type">🔵 CARTA E CARTONE</div>
+                        <div class="waste-days">Martedì (settimanale)</div>
+                    </div>
+                    <div class="waste-item">
+                        <div class="waste-type">🟡 PLASTICA E ALLUMINIO</div>
+                        <div class="waste-days">Martedì (settimanale)</div>
+                    </div>
+                    <div class="waste-item">
+                        <div class="waste-type">⚪ VETRO</div>
+                        <div class="waste-days">Martedì/Mercoledì (alternato)</div>
+                    </div>
+                    <div class="waste-item">
+                        <div class="waste-type">⚫ NON RICICLABILE</div>
+                        <div class="waste-days">Venerdì/Sabato (alternato)</div>
+                    </div>
+                </div>
+
+                <div class="info-box">
+                    <strong>📋 Cosa buttare dove:</strong><br>
+                    <strong>🟢 Organico:</strong> Scarti di cibo, bucce, fondi di caffè, tovaglioli sporchi<br>
+                    <strong>🔵 Carta:</strong> Giornali, riviste, scatole di cartone (pulite)<br>
+                    <strong>🟡 Plastica/Alluminio:</strong> Bottiglie di plastica, lattine, contenitori<br>
+                    <strong>⚪ Vetro:</strong> Bottiglie e barattoli di vetro (senza tappi)<br>
+                    <strong>⚫ Indifferenziato:</strong> Tutto ciò che non può essere riciclato
+                </div>
+
+                <ul class="rule-list">
+                    <li class="rule-item">
+                        <span class="rule-icon">🏠</span>
+                        <div class="rule-text">
+                            <strong>Dove lasciare:</strong> I sacchetti pieni possono essere lasciati nei pressi del portone di ingresso seguendo il calendario.
+                        </div>
+                    </li>
+                    <li class="rule-item">
+                        <span class="rule-icon">🕐</span>
+                        <div class="rule-text">
+                            <strong>Orario:</strong> Esporre sempre la mattina presto (entro le 7:00), mai la sera precedente.
+                        </div>
+                    </li>
+                    <li class="rule-item">
+                        <span class="rule-icon">🧹</span>
+                        <div class="rule-text">
+                            <strong>Contenitori:</strong> Utilizzare gli appositi cestini presenti nell'appartamento per la raccolta differenziata.
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Pagina 3 -->
+    <div class="page">
+        <div class="section">
+            <div class="section-title">
+                ⚡ ART. 7 - SICUREZZA ELETTRICA E USO ELETTRODOMESTICI
+            </div>
+            <div class="article">
+                <div class="article-title">
+                    <span class="article-icon">⚠️</span>
+                    Attenzione: Uso degli Elettrodomestici
+                </div>
+                
+                <div class="highlight-box">
+                    ⚡ È SEVERAMENTE VIETATO utilizzare simultaneamente i seguenti elettrodomestici:
+                </div>
+
+                <div class="appliance-grid">
+                    <div class="appliance-item">
+                        <span class="appliance-icon">🧺</span>
+                        <div class="appliance-name">Lavatrice</div>
+                    </div>
+                    <div class="appliance-item">
+                        <span class="appliance-icon">🍽️</span>
+                        <div class="appliance-name">Lavastoviglie</div>
+                    </div>
+                    <div class="appliance-item">
+                        <span class="appliance-icon">🔥</span>
+                        <div class="appliance-name">Piano Induzione</div>
+                    </div>
+                    <div class="appliance-item">
+                        <span class="appliance-icon">🍞</span>
+                        <div class="appliance-name">Forno</div>
+                    </div>
+                    <div class="appliance-item">
+                        <span class="appliance-icon">💨</span>
+                        <div class="appliance-name">Phon</div>
+                    </div>
+                    <div class="appliance-item">
+                        <span class="appliance-icon">💇</span>
+                        <div class="appliance-name">Piastra Capelli</div>
+                    </div>
+                </div>
+
+                <div class="warning-box">
+                    <strong>🚨 L'uso simultaneo può causare l'interruzione della corrente elettrica nell'intero appartamento!</strong>
+                </div>
+
+                <div class="article-title" style="margin-top: 25px;">
+                    <span class="article-icon">🔧</span>
+                    Procedura in caso di Blackout
+                </div>
+                
+                <ul class="rule-list">
+                    <li class="rule-item">
+                        <span class="rule-icon">🔍</span>
+                        <div class="rule-text">
+                            <strong>Localizzazione:</strong> In caso di interruzione della corrente, lo sportellino grigio che dovete aprire NON si trova di fianco al vostro portone, ma è quello dell'appartamento opposto con il numero 1/2. Sul vostro sportellino troverete una freccia che vi indicherà la direzione. La chiave per aprire lo sportellino si trova insieme alla chiave di ingresso che trovate sul centrotavola in cucina.
+                        </div>
+                    </li>
+                    <li class="rule-item">
+                        <span class="rule-icon">🔧</span>
+                        <div class="rule-text">
+                            <strong>Riattivazione:</strong> Se aperto, sarà sufficiente alzare il contatore per riavere l'energia elettrica.
+                        </div>
+                    </li>
+                    <li class="rule-item">
+                        <span class="rule-icon">⚠️</span>
+                        <div class="rule-text">
+                            <strong>Prevenzione:</strong> Prestare sempre attenzione a non utilizzare gli elettrodomestici contemporaneamente.
+                        </div>
+                    </li>
+                </ul>
+
+                <div class="article-title" style="margin-top: 25px;">
+                    <span class="article-icon">🧯</span>
+                    Sicurezza Antincendio
+                </div>
+                
+                <div class="info-box">
+                    <strong>🧯 ESTINTORE:</strong> In caso di necessità, l'estintore si trova nel mobile sotto il lavello in cucina. Familiarizzatevi con la sua posizione al vostro arrivo.
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-title">
+                💰 ART. 8 - CAUZIONE E COSTI AGGIUNTIVI
+            </div>
+            <div class="article">
+                <div class="article-title">
+                    <span class="article-icon">💳</span>
+                    Cauzione del Soggiorno
+                </div>
+                
+                <div class="info-box">
+                    <strong>💰 CAUZIONE:</strong> La cauzione del soggiorno è di <strong>2 EURO a persona per giornata</strong>. Sarà sufficiente lasciare i soldi in contanti sul tavolo della cucina al momento del CHECK-OUT. Se la somma non sarà presente come indicato, verrete contattati per riscuotere l'importo.
+                </div>
+
+                <div class="article-title" style="margin-top: 25px;">
+                    <span class="article-icon">⚖️</span>
+                    Sanzioni per Mancato Rispetto delle Regole
+                </div>
+                
+                <p style="margin-bottom: 20px;">In caso di mancato rispetto delle regole della casa o di danni agli arredi e alle attrezzature, potrebbero essere applicate le seguenti sanzioni:</p>
+
+                <div class="price-table">
+                    <div class="price-header">
+                        💸 TARIFFARIO SANZIONI
+                    </div>
+                    <div class="price-row">
+                        <div class="price-description">Mancata pulizia elettrodomestici (forno, piano cottura, ecc.)</div>
+                        <div class="price-amount">€20 - €50</div>
+                    </div>
+                    <div class="price-row">
+                        <div class="price-description">Rifiuti non smaltiti correttamente</div>
+                        <div class="price-amount">€20</div>
+                    </div>
+                    <div class="price-row">
+                        <div class="price-description">Danni alla biancheria (macchie permanenti)</div>
+                        <div class="price-amount">€20 - €100 per articolo</div>
+                    </div>
+                    <div class="price-row">
+                        <div class="price-description">Danni agli arredi o alle attrezzature</div>
+                        <div class="price-amount">€50 - €300</div>
+                    </div>
+                    <div class="price-row">
+                        <div class="price-description">Smarrimento delle chiavi</div>
+                        <div class="price-amount">€30</div>
+                    </div>
+                    <div class="price-row">
+                        <div class="price-description">Violazione del divieto di fumo</div>
+                        <div class="price-amount">€100</div>
+                    </div>
+                    <div class="price-row">
+                        <div class="price-description">Spese extra per richieste particolari del cliente</div>
+                        <div class="price-amount">Da valutare</div>
+                    </div>
+                </div>
+
+                <div class="warning-box">
+                    <strong>📋 NOTA:</strong> Le sanzioni verranno detratte dalla cauzione versata. In caso di danni superiori alla cauzione, sarà richiesto il pagamento della differenza.
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-title">
+                📶 ART. 9 - CONNESSIONE WIFI
+            </div>
+            <div class="article">
+                <div class="wifi-box">
+                    <div style="font-size: 24px; margin-bottom: 15px;">📶 CONNESSIONE INTERNET</div>
+                    <div class="wifi-credentials">
+                        <strong>NOME RETE:</strong> STARFISH-WIFI
+                    </div>
+                    <div class="wifi-credentials">
+                        <strong>PASSWORD:</strong> STARFISH89
+                    </div>
+                    <div style="font-size: 14px; margin-top: 15px; opacity: 0.9;">
+                        La connessione WiFi è gratuita e disponibile 24/7 in tutto l'appartamento
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Pagina 4 -->
+    <div class="page">
+        <div class="section">
+            <div class="section-title">
+                ⭐ LASCIA UNA RECENSIONE
+            </div>
+            <div class="qr-section">
+                <div style="font-size: 24px; font-weight: 600; color: #2c5aa0; margin-bottom: 15px;">
+                    La tua opinione è importante per noi!
+                </div>
+                
+                <div class="qr-code">
+                    <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://www.booking.com/Share-7smyw8" alt="QR Code per recensione Starfish" style="width: 120px; height: 120px; border-radius: 15px; box-shadow: 0 8px 20px rgba(0,0,0,0.2);">
+                </div>
+                
+                <div style="font-size: 16px; margin: 20px 0; color: #555;">
+                    📱 <strong>Scansiona il QR Code</strong> con la fotocamera del tuo smartphone<br>
+                    per lasciare una recensione su Booking.com
+                </div>
+                
+                <div style="font-size: 14px; color: #666; background: rgba(255,255,255,0.7); padding: 15px; border-radius: 10px;">
+                    <strong>Oppure visita direttamente:</strong><br>
+                    <span style="font-family: monospace; font-size: 12px;">https://www.booking.com/Share-7smyw8</span>
+                </div>
+                
+                <div style="margin-top: 20px; font-size: 14px; color: #555;">
+                    ⭐ Le tue recensioni ci aiutano a migliorare<br>
+                    💬 Condividi la tua esperienza con altri viaggiatori<br>
+                    ❤️ Grazie per aver scelto Casa Starfish!
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-title">
+                📞 ART. 10 - CONTATTI UTILI
+            </div>
+            <div class="contact-box">
+                <div style="font-size: 20px; margin-bottom: 10px;">📱 PROPRIETARIO</div>
+                <div class="phone-number">327 592 8671</div>
+            </div>
+            
+            <div class="contact-box" style="background: linear-gradient(135deg, #ff6b6b 0%, #ee5a24 100%); margin-top: 15px;">
+                <div style="font-size: 20px; margin-bottom: 10px;">🚨 EMERGENZE</div>
+                <div class="phone-number">112</div>
+                <div style="font-size: 14px; margin-top: 10px;">
+                    Vigili del Fuoco • Medico • Polizia
+                </div>
+            </div>
+            
+            <div class="article">
+                <div class="article-title">
+                    <span class="article-icon">🆘</span>
+                    Quando Contattarci
+                </div>
+                <ul class="rule-list">
+                    <li class="rule-item">
+                        <span class="rule-icon">🚨</span>
+                        <div class="rule-text">
+                            <strong>Emergenze:</strong> Chiamare immediatamente in caso di problemi gravi o situazioni di pericolo
+                        </div>
+                    </li>
+                    <li class="rule-item">
+                        <span class="rule-icon">🔧</span>
+                        <div class="rule-text">
+                            <strong>Problemi Tecnici:</strong> Guasti agli elettrodomestici, problemi elettrici, idraulici
+                        </div>
+                    </li>
+                    <li class="rule-item">
+                        <span class="rule-icon">🔑</span>
+                        <div class="rule-text">
+                            <strong>Problemi di Accesso:</strong> Smarrimento chiavi, problemi con serrature
+                        </div>
+                    </li>
+                    <li class="rule-item">
+                        <span class="rule-icon">❓</span>
+                        <div class="rule-text">
+                            <strong>Informazioni:</strong> Dubbi sul regolamento, consigli turistici, assistenza generale
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-title">
+                🏖️ SCOPRI PIZZO CALABRO
+            </div>
+            <div class="article">
+                <div class="article-title">
+                    <span class="article-icon">🌊</span>
+                    La Perla della Calabria
+                </div>
+                <p style="margin-bottom: 20px;">Pizzo è una delle località più affascinanti della Calabria, famosa in tutto il mondo per le sue bellezze naturali e le sue prelibatezze gastronomiche.</p>
+                
+                <ul class="rule-list">
+                    <li class="rule-item">
+                        <span class="rule-icon">🍦</span>
+                        <div class="rule-text">
+                            <strong>Tartufo di Pizzo:</strong> Il famoso gelato artigianale nato qui e conosciuto in tutto il mondo
+                        </div>
+                    </li>
+                    <li class="rule-item">
+                        <span class="rule-icon">🏰</span>
+                        <div class="rule-text">
+                            <strong>Castello Aragonese:</strong> Fortezza del XV secolo che domina il mare con vista mozzafiato
+                        </div>
+                    </li>
+                    <li class="rule-item">
+                        <span class="rule-icon">🌊</span>
+                        <div class="rule-text">
+                            <strong>Chiaia di Luna:</strong> Spiaggia paradisiaca raggiungibile solo via mare o sentiero
+                        </div>
+                    </li>
+                    <li class="rule-item">
+                        <span class="rule-icon">🏛️</span>
+                        <div class="rule-text">
+                            <strong>Centro Storico:</strong> Vicoli caratteristici, chiese antiche e panorami sulla Costa degli Dei
+                        </div>
+                    </li>
+                    <li class="rule-item">
+                        <span class="rule-icon">🐟</span>
+                        <div class="rule-text">
+                            <strong>Gastronomia:</strong> Pesce fresco, 'nduja, soppressata e i sapori autentici della Calabria
+                        </div>
+                    </li>
+                    <li class="rule-item">
+                        <span class="rule-icon">🚤</span>
+                        <div class="rule-text">
+                            <strong>Escursioni:</strong> Gite in barca alle Isole Eolie, Stromboli e lungo la Costa degli Dei
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div style="text-align: center; margin-top: 40px; padding: 30px; background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 100%); border-radius: 15px; color: white;">
+            <div style="font-size: 28px; margin-bottom: 15px;">🌟</div>
+            <div style="font-size: 20px; font-weight: 600; margin-bottom: 10px;">
+                GRAZIE PER AVER SCELTO CASA STARFISH!
+            </div>
+            <div style="font-size: 16px; opacity: 0.9;">
+                Godetevi il vostro soggiorno a Pizzo Calabro<br>
+                Vi auguriamo una vacanza indimenticabile! 🌟🏖️
+            </div>
+        </div>
+
+        <div style="text-align: center; margin-top: 20px; font-size: 12px; color: #666;">
+            Casa Vacanze STARFISH - Pizzo (VV) - Sant'Agostino<br>
+            Tel: 327 592 8671 | Regolamento Interno 2025
+        </div>
+    </div>
+</body>
+</html> class="rule-icon">🔑</span>
+                        <div class="rule-text">
+                            <strong>Chiavi:</strong> Troverete le chiavi dell'unità abitativa sul tavolo in cucina con le quali potete tranquillamente aprire e chiudere le porte dell'appartamento.
+                        </div>
+                    </li>
+                    <li class="rule-item">
+                        <span class="rule-icon">⚠️</span>
+                        <div class="rule-text">
+                            <strong>MOLTO IMPORTANTE:</strong> Se vengono effettuate le mandate della porta e non si ha la chiave con sé, il codice presente all'esterno delle porte NON sarà in grado di aprire la porta.
+                        </div>
+                    </li>
+                    <li class="rule-item">
+                        <span class="rule-icon">📄</span>
+                        <div class="rule-text">
+                            <strong>Documenti:</strong> Il conduttore e gli eventuali ospiti devono inviare un documento di riconoscimento valido.
+                        </div>
+                    </li>
+                    <li class="rule-item">
+                        <span
